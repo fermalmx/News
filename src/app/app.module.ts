@@ -12,6 +12,8 @@ import { PostComponent } from './components/post/post.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { environment } from '../environments/environment';
+import { AuthenticationService } from './services/authentication.service';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { environment } from '../environments/environment';
     WelcomeComponent,
     NewsComponent,
     PostComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,6 @@
-<p>welcome works!</p>
+<div>
+    <input type="email" #email required />
+    <input type="password" #password required />
+    <button (click)="signUp(email.value, password.value)">Iniciar sesión</button>
+</div>
+
