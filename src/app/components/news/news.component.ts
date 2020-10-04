@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NewsService } from 'src/app/services/news.service';
-import { Post } from 'src/app/models/post.interface'
+import { PostList } from 'src/app/models/post-list.interface';
 
 @Component({
   selector: 'app-news',
@@ -10,7 +10,7 @@ import { Post } from 'src/app/models/post.interface'
 })
 export class NewsComponent implements OnInit {
 
-  public noticias: Post[];
+  public noticias: PostList[];
   
   constructor(
     private authService: AuthenticationService,
@@ -22,10 +22,7 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.newsService.retrieveNews().subscribe(data => {
-      this.noticias = data;
-      console.log(data)   
-    })
+    this.newsService.retrieveNews().subscribe(data => this.noticias = data['articles'])
   }
 
 }

@@ -1,3 +1,11 @@
 <app-navbar></app-navbar>
-
+<div *ngFor="let noticia of noticias">
+    <p>{{noticia.url}}</p>
+    <p>{{noticia.urlToImage}}</p>      
+    <p>{{noticia.title}}</p>
+    <p>{{noticia.publishedAt}}</p>
+    <p>{{noticia.description}}</p>    
+    <p>{{noticia.author}}</p>
+    <hr>
+</div>
 <button (click)="signOut()">Cerrar sesión</button>

@@ -10,7 +10,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NewsComponent } from './components/news/news.component';
-import { PostComponent } from './components/post/post.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { environment } from '../environments/environment';
@@ -23,7 +22,6 @@ import { NewsService } from './services/news.service';
     NavbarComponent,
     WelcomeComponent,
     NewsComponent,
-    PostComponent,
     ProfileComponent,
     RegisterComponent
   ],
