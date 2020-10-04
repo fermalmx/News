@@ -10,8 +10,8 @@ export class WelcomeComponent implements OnInit {
 
   constructor(private authService: AuthenticationService ) { }
 
-  public signUp(email: string, password: string) {
-    this.authService.signUp(email, password);
+  public signIn(email: string, password: string) {
+    this.authService.signIn(email, password);
   }
 
   ngOnInit(): void {

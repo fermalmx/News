@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'registro', component: RegisterComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectLoggedInToNews } },
   { path: 'noticias', component: NewsComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToWelcome } },
   { path: 'noticias', children: [
-    { path: 'entrada', component: PostComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToWelcome } },
+    { path: ':id', component: PostComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToWelcome } },
     { path: 'perfil', component: ProfileComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToWelcome } },
   ] },
   { path: '', redirectTo: '/bienvenido', pathMatch: 'full' },

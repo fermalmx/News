@@ -17,6 +17,16 @@ export class AuthenticationService {
   public async signUp(email: string, password: string) {
     await this.fauth.createUserWithEmailAndPassword(email, password)
     .then(() => {
+      this.router.navigate(['bienvenido']);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
+  public async signIn(email: string, password: string) {
+    await this.fauth.signInWithEmailAndPassword(email, password)
+    .then(() => {
       this.router.navigate(['noticias']);
     })
     .catch(error => {
