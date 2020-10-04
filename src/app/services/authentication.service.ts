@@ -17,7 +17,7 @@ export class AuthenticationService {
   public async signUp(email: string, password: string) {
     await this.fauth.createUserWithEmailAndPassword(email, password)
     .then(() => {
-      this.router.navigateByUrl('noticias(Navbar:navbar)');
+      this.router.navigate(['noticias']);
     })
     .catch(error => {
       console.log(error);
@@ -26,6 +26,9 @@ export class AuthenticationService {
 
   public async signOut() {
     await this.fauth.signOut()
+    .then(() => {
+      this.router.navigate(['bienvenido']);
+    })
     .catch(error => {
       console.log(error);
     })
