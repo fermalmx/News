@@ -1,4 +1,12 @@
 <app-navbar></app-navbar>
+<select [(ngModel)]="selectedCountry.value" (change)="filterNews()" placeholder="País">
+    <option *ngFor="let country of countries" value="{{country.value}}" placeholder="Categoría">{{country.field}}</option>
+</select>
+
+<select [(ngModel)]="selectedCategory.value" (change)="filterNews()">
+    <option *ngFor="let category of categories" value="{{category.value}}">{{category.field}}</option>
+</select>
+
 <div *ngFor="let noticia of noticias">
     <p>{{noticia.url}}</p>
     <p>{{noticia.urlToImage}}</p>      
@@ -9,3 +17,4 @@
     <hr>
 </div>
 <button (click)="signOut()">Cerrar sesión</button>
+
