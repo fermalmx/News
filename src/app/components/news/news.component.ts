@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NewsService } from 'src/app/services/news.service';
 import { PostList } from 'src/app/models/post-list.interface';
 import { Country } from 'src/app/models/country.interface';
@@ -24,14 +23,7 @@ export class NewsComponent implements OnInit {
     field: 'Tecnología'
   }
 
-  constructor(
-    private authService: AuthenticationService,
-    private newsService: NewsService
-    ) { }
-
-  public signOut() {
-    this.authService.signOut();
-  }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
     this.countries = this.newsService.getCountries();
@@ -42,5 +34,4 @@ export class NewsComponent implements OnInit {
   public filterNews() {
     this.newsService.retrieveNews(this.selectedCountry.value, this.selectedCategory.value).subscribe(data => this.noticias = data['articles']);
   }
-
 }

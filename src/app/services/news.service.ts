@@ -32,15 +32,19 @@ export class NewsService {
     }
   ];
 
-  constructor(
-    private httpClient: HttpClient,
+  private page: number;
 
-    ) { }
+  public getPage() {
+    return this.page;
+  }
+
+  constructor(private httpClient: HttpClient) { }
 
   retrieveNews(country: string, category: string):Observable<PostList[]> {
-    var url = 'http://newsapi.org/v2/top-headlines?country=' + country + '&category=' + category + '&apiKey=' + this.apiKey;
+    var url = 'http://newsapi.org/v2/top-headlines?pageSize=12&country=' + country + '&category=' + category + '&apiKey=' + this.apiKey;
     return this.httpClient.get<PostList[]>(url);
   }
+
   getCountries() {
     return this.countries;
   }

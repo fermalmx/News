@@ -1,20 +1,34 @@
 <app-navbar></app-navbar>
-<select [(ngModel)]="selectedCountry.value" (change)="filterNews()" placeholder="País">
-    <option *ngFor="let country of countries" value="{{country.value}}" placeholder="Categoría">{{country.field}}</option>
-</select>
+<div class="container">
 
-<select [(ngModel)]="selectedCategory.value" (change)="filterNews()">
-    <option *ngFor="let category of categories" value="{{category.value}}">{{category.field}}</option>
-</select>
+    <div class="filters-container">
+        <mat-form-field appearance="outline">
+            <mat-select [(ngModel)]="selectedCountry.value" (selectionChange)="filterNews()">
+                <mat-option *ngFor="let country of countries" value="{{country.value}}">{{country.field}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-select [(ngModel)]="selectedCategory.value" (selectionChange)="filterNews()">
+                <mat-option *ngFor="let category of categories" value="{{category.value}}">{{category.field}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 
-<div *ngFor="let noticia of noticias">
-    <p>{{noticia.url}}</p>
-    <p>{{noticia.urlToImage}}</p>      
-    <p>{{noticia.title}}</p>
-    <p>{{noticia.publishedAt}}</p>
-    <p>{{noticia.description}}</p>    
-    <p>{{noticia.author}}</p>
-    <hr>
+    <mat-grid-list class="news-section" cols="3" rowHeight="40em" gutterSize="52px">
+        <mat-grid-tile *ngFor="let noticia of noticias">
+            <a href="{{noticia.url}}" target="_blank">
+                <mat-card class="post-card">
+                    <img class="mat-card-image" src="{{noticia.urlToImage}}" alt="{{noticia.title}}">
+                    <mat-card-content class="post-content">
+                        <h3>{{noticia.title}}</h3>
+                        <sub>Publicado: {{noticia.publishedAt | date: 'dd LLLL yyyy':'-0600':'es'}}</sub>
+                        <p>{{noticia.description | excerpt: 80}}</p>
+                        <p>Por: {{noticia.author}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </a>            
+        </mat-grid-tile>        
+    </mat-grid-list>
 </div>
-<button (click)="signOut()">Cerrar sesión</button>
 

@@ -1,0 +1,47 @@
+nav {
+    align-items: center;
+    box-shadow: 0px 12px 8px #E8E8E8;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5em;
+    max-height: 80px;
+    height: 80px;
+    padding: 0 4em;
+}
+.logo-container {
+    align-items: center;
+    display: flex;
+    flex-basis: 25%;
+    height: inherit;
+}
+.logo {
+    height: calc(100% - 20px);
+}
+.title {
+    flex-basis: 50%;
+    margin: 0;
+    text-align: center;
+}
+.user-info {
+    flex-basis: 25%;
+    height: inherit;
+    text-align: right;
+    width: 100%;
+}
+.user-info button {
+    height: inherit;
+}
+::ng-deep .mat-button-wrapper {
+    align-items: center;
+    display: flex;
+    height: inherit;
+}
+.user-email {
+    margin: 0 5px;
+}
+.user-photo {
+    height: 50%;
+}
+.signout {
+    color: #ce2525;
+}

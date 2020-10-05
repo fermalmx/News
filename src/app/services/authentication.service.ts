@@ -7,16 +7,21 @@ import { Router } from '@angular/router';
 })
 export class AuthenticationService {
 
+  public email: string;
+
+  public getEmail() {
+    return this.email;
+  }
+
   constructor(
     private fauth: AngularFireAuth,
     private router: Router
-    ) {
-
-  }
+    ) { }
 
   public async signUp(email: string, password: string) {
     await this.fauth.createUserWithEmailAndPassword(email, password)
     .then(() => {
+      this.email = email;
       this.router.navigate(['bienvenido']);
     })
     .catch(error => {
@@ -27,6 +32,7 @@ export class AuthenticationService {
   public async signIn(email: string, password: string) {
     await this.fauth.signInWithEmailAndPassword(email, password)
     .then(() => {
+      this.email = email;
       this.router.navigate(['noticias']);
     })
     .catch(error => {
@@ -37,6 +43,7 @@ export class AuthenticationService {
   public async signOut() {
     await this.fauth.signOut()
     .then(() => {
+      this.email = '';
       this.router.navigate(['bienvenido']);
     })
     .catch(error => {
