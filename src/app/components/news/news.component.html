@@ -14,12 +14,44 @@
             </mat-select>
         </mat-form-field>
     </div>
-
-    <mat-grid-list class="news-section" cols="3" rowHeight="40em" gutterSize="52px">
+    <!--Por falta de tiempo, improviso este "RESPONSIVE"-->
+    <mat-grid-list class="news-section news-section-wide" cols="3" rowHeight="40em" gutterSize="52px">
         <mat-grid-tile *ngFor="let noticia of noticias">
             <a href="{{noticia.url}}" target="_blank">
                 <mat-card class="post-card">
-                    <img class="mat-card-image" src="{{noticia.urlToImage}}" alt="{{noticia.title}}">
+                    <img class="mat-card-image" src="{{noticia.urlToImage}}" alt="Foto de noticia: {{noticia.title}}">
+                    <mat-card-content class="post-content">
+                        <h3>{{noticia.title}}</h3>
+                        <sub>Publicado: {{noticia.publishedAt | date: 'dd LLLL yyyy':'-0600':'es'}}</sub>
+                        <p>{{noticia.description | excerpt: 80}}</p>
+                        <p>Por: {{noticia.author}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </a>            
+        </mat-grid-tile>        
+    </mat-grid-list>
+
+    <mat-grid-list class="news-section news-section-tablet" cols="2" rowHeight="40em" gutterSize="52px">
+        <mat-grid-tile *ngFor="let noticia of noticias">
+            <a href="{{noticia.url}}" target="_blank">
+                <mat-card class="post-card">
+                    <img class="mat-card-image" src="{{noticia.urlToImage}}" alt="Foto de noticia: {{noticia.title}}">
+                    <mat-card-content class="post-content">
+                        <h3>{{noticia.title}}</h3>
+                        <sub>Publicado: {{noticia.publishedAt | date: 'dd LLLL yyyy':'-0600':'es'}}</sub>
+                        <p>{{noticia.description | excerpt: 80}}</p>
+                        <p>Por: {{noticia.author}}</p>
+                    </mat-card-content>
+                </mat-card>
+            </a>            
+        </mat-grid-tile>        
+    </mat-grid-list>
+
+    <mat-grid-list class="news-section news-section-mobile" cols="1" rowHeight="40em" gutterSize="52px">
+        <mat-grid-tile *ngFor="let noticia of noticias">
+            <a href="{{noticia.url}}" target="_blank">
+                <mat-card class="post-card">
+                    <img class="mat-card-image" src="{{noticia.urlToImage}}" alt="Foto de noticia: {{noticia.title}}">
                     <mat-card-content class="post-content">
                         <h3>{{noticia.title}}</h3>
                         <sub>Publicado: {{noticia.publishedAt | date: 'dd LLLL yyyy':'-0600':'es'}}</sub>

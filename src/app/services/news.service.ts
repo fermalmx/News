@@ -260,6 +260,7 @@ export class NewsService {
     }
   ];
 
+  //Quedó pendiente el paginado.
   private page: number;
 
   public getPage() {
