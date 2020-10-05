@@ -1,20 +1,13 @@
-::ng-deep app-welcome {
-    background: linear-gradient(#0b3b49, #43879b);
-}
 .login-box {
     align-items: center;
     display: flex;
     flex-direction: column;
     min-width: 25%;
 }
-.logo {
-    margin-bottom: 2em;
-    width: 50%;
-}
 .login-box h2 {
     text-align: center;
 }
-.sign-in-btn {
+.sign-out-btn {
     margin-bottom: 1em;
 }
 ::ng-deep .mat-form-field-wrapper {

@@ -12,10 +12,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -31,6 +33,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { environment } from '../environments/environment';
 import { AuthenticationService } from './services/authentication.service';
 import { NewsService } from './services/news.service';
+import { EndingSessionComponent } from './verification/ending-session/ending-session.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { NewsService } from './services/news.service';
     NewsComponent,
     ProfileComponent,
     RegisterComponent,
-    ExcerptPipe
+    ExcerptPipe,
+    EndingSessionComponent
   ],
   imports: [
     BrowserModule,
@@ -52,11 +56,13 @@ import { NewsService } from './services/news.service';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatGridListModule,
     MatInputModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthenticationService,

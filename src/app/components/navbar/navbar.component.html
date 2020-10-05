@@ -5,12 +5,12 @@
     <h1 class="title">Noticias</h1>
     <div class="user-info">
         <button mat-button [matMenuTriggerFor]="beforeMenu">
-            <p class="user-email">{{userEmail}}</p>
+            <p class="user-email">{{email}}</p>
             <img class="user-photo" src="./assets/userphoto/admin@3x.png" alt="Foto de perfil">
         </button>
     </div>
 </nav>
 
 <mat-menu #beforeMenu="matMenu" xPosition="before">
-    <button class="signout" mat-menu-item (click)="signOut()">Cerrar sesión</button>
+    <button class="signout" mat-menu-item (click)="openDialog()">Cerrar sesión</button>
 </mat-menu>

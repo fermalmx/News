@@ -1,6 +1,19 @@
-<div>
-    <input type="email" #email required />
-    <input type="password" #password required />
-    <button (click)="signIn(email.value, password.value)">Iniciar sesión</button>
-</div>
-
+<mat-card class="login-box">
+    <img class="logo" src="./assets/logo@3x.png" alt="Logo de Bambú">
+    <h2>Accede al portal de noticias más intuitivo y completo</h2>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Correo electrónico</mat-label>
+            <input [(ngModel)]="email" type="email" matInput placeholder="ejemplo@correo.com" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input [(ngModel)]="password" type="password" matInput placeholder="******" required>
+        </mat-form-field>
+    </p>
+    <button class="sign-in-btn" (click)="signIn()" mat-button color="primary">Inicia sesión</button>
+    <p>¿Eres nuevo?</p>    
+    <button class="sign-up-btn" (click)="openDialog()" mat-flat-button color="accent">Crea una cuenta</button>
+</mat-card>

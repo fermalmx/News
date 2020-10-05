@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EndingSessionComponent } from 'src/app/verification/ending-session/ending-session.component';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-navbar',
@@ -8,17 +10,22 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class NavbarComponent implements OnInit {
 
-  userEmail: string;
+  public email: string;
 
-  constructor(private authService: AuthenticationService) {
-    this.userEmail = authService.getEmail();
-  }
+  constructor(
+    private fauth: AngularFireAuth,
+    private dialog: MatDialog
+    ) {
+      this.fauth.currentUser.then(user => {
+        this.email = user.email;
+      })
+    }
 
-  public signOut() {
-    this.authService.signOut();
+  public openDialog() {
+    this.dialog.open(EndingSessionComponent);
   }
 
   ngOnInit(): void {
-  }
 
+  }
 }

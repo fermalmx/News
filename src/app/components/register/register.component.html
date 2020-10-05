@@ -1,1 +1,17 @@
-<p>register works!</p>
+<div class="login-box">
+    <h2>Registro de nuevo usuario</h2>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Correo electrónico</mat-label>
+            <input [(ngModel)]="email" type="email" matInput placeholder="ejemplo@correo.com" required>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input [(ngModel)]="password" type="password" matInput placeholder="******" required>
+        </mat-form-field>
+    </p>
+    <button class="sign-up-btn" (click)="signUp()" mat-button color="accent">Crear cuenta</button>
+    <button mat-button color="basic" mat-dialog-close>Cancelar</button>
+</div>

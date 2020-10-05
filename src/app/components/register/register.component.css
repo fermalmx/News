@@ -1,0 +1,15 @@
+.login-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 25%;
+}
+.login-box h2 {
+    text-align: center;
+}
+.sign-up-btn {
+    margin-bottom: 1em;
+}
+::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+}

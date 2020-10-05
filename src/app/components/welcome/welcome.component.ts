@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
+import { MatDialog } from '@angular/material/dialog';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-welcome',
@@ -8,10 +10,20 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService ) { }
+  public email: string;
+  public password: string;
 
-  public signIn(email: string, password: string) {
-    this.authService.signIn(email, password);
+  constructor(
+    private authService: AuthenticationService,
+    private dialog: MatDialog
+    ) { }
+
+  public signIn() {
+    this.authService.signIn(this.email, this.password);
+  }
+
+  public openDialog() {
+    this.dialog.open(RegisterComponent);
   }
 
   ngOnInit(): void {
