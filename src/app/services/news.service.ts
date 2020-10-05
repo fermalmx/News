@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { PostList } from '../models/post-list.interface';
-import { Observable } from 'rxjs';
-import { Country } from 'src/app/models/country.interface';
 import { Category } from 'src/app/models/category.interface';
+import { Country } from 'src/app/models/country.interface';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { PostList } from '../models/post-list.interface';
 
 @Injectable({
   providedIn: 'root'

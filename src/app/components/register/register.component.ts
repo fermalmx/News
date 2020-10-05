@@ -13,8 +13,8 @@ export class RegisterComponent implements OnInit {
   public password: string;
 
   constructor(
-    private dialog: MatDialog,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private dialog: MatDialog
     ) { }
 
   public signUp() {
@@ -22,7 +22,5 @@ export class RegisterComponent implements OnInit {
     this.dialog.closeAll();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

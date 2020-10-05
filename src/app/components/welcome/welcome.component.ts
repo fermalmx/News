@@ -26,7 +26,5 @@ export class WelcomeComponent implements OnInit {
     this.dialog.open(RegisterComponent);
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

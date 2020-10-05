@@ -19,7 +19,5 @@ export class EndingSessionComponent implements OnInit {
     this.dialog.closeAll();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/category.interface';
+import { Country } from 'src/app/models/country.interface';
 import { NewsService } from 'src/app/services/news.service';
 import { PostList } from 'src/app/models/post-list.interface';
-import { Country } from 'src/app/models/country.interface';
-import { Category } from 'src/app/models/category.interface';
 
 @Component({
   selector: 'app-news',

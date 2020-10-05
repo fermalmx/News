@@ -1,6 +1,5 @@
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
-
 registerLocaleData(localeEs, 'es');
 
 import { ExcerptPipe } from './filters/excerpt.pipe';
@@ -17,8 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -29,31 +28,31 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NewsComponent } from './components/news/news.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EndingSessionComponent } from './verification/ending-session/ending-session.component';
 
 import { environment } from '../environments/environment';
 import { AuthenticationService } from './services/authentication.service';
 import { NewsService } from './services/news.service';
-import { EndingSessionComponent } from './verification/ending-session/ending-session.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    EndingSessionComponent,
+    ExcerptPipe,
     NavbarComponent,
-    WelcomeComponent,
     NewsComponent,
     ProfileComponent,
     RegisterComponent,
-    ExcerptPipe,
-    EndingSessionComponent
+    WelcomeComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    FormsModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
